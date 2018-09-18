@@ -22,6 +22,8 @@
 - RegExp
 - Error
 
+> 之所以说这些是内置函数，是因为在控制台输出这些值时都是函数类型
+
 ### js中的内置对象
 - Math
 - JSON
@@ -54,3 +56,25 @@ function square(num){
    var number=square(20);   
    console.log(total);//输出50，它与第一个例子的唯一不同在于声明了一句var total ＝ 20；结合第二个例子，说明传参时实际就等于声明了一次，此时就变为新的局部的变量。
 ```
+
+## 数组
+### 数组的项
+```JavaScript
+var arr = []
+arr.num = 56 //不仅仅是数组可以设置属性，函数也可以这样设置
+arr[0] = 'gu'
+arr[1] = 7
+arr[6] = 'js'
+console.log(arr) //=> ['gu', 7, empty*4, 'js', num: 56]
+console.log(arr[4]) //=> undefined
+```
+
+## 原型和原型链
+### 原型规则
+- 所有的引用类型（数组，对象，函数），都具有对象特性，即可自由扩展属性（null除外）
+
+- 所有的引用类型都有一个__proto__（隐式原型），属性值是一个普通的对象
+
+- 所有函数，都有一个prototype属性（显式原型），属性值也是一个普通对象
+
+- 所有的引用类型，__proto__指向它的构造函数的prototype 属性值
